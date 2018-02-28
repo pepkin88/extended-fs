@@ -144,7 +144,7 @@ var fsExtended = {
      * @see https://github.com/substack/node-mkdirp#mkdirpdir-mode-cb
      */
     mkdirp: mkdirp,
-    
+
     /**
      * Synchronous recursive mkdir, mkdir -p
      *
@@ -189,7 +189,7 @@ var fsExtended = {
     copyFileSync: function(src, dest) {
 
         var readContent = fs.readFileSync(src);
-        
+
         if (readContent === null) {
             return 'Content does not exist at ' + src;
         }
@@ -420,11 +420,11 @@ var fsExtended = {
         if (fs.existsSync(dest)) {
             var stats = fs.statSync(dest);
             if (stats.isDirectory()) {
-                error = fsExtended.rmDirSync(dest);    
+                error = fsExtended.rmDirSync(dest);
             } else {
                 error = fs.unlinkSync(dest);
             }
-            
+
             if (error) {
                 return error;
             }
@@ -442,7 +442,7 @@ var fsExtended = {
         var stats;
         var srcpath;
         var destpath;
-        
+
         for (; i < length; i++) {
             srcpath = path.join(src, files[i]);
             destpath = path.join(dest, files[i]);
@@ -566,7 +566,7 @@ var fsExtended = {
                 defer.resolve.apply(defer, args);
             }
         };
-        promiseFunction.name = methodName + 'Promise';
+        // promiseFunction.name = methodName + 'Promise';
 
         return promiseFunction;
     }
